@@ -62,9 +62,9 @@
     // console.log(inventorsYearsLived);
     const orderYearsLived = inventorsYearsLived.sort((x,y) => {
       if ((x.passed - x.year) > (y.passed - y.year)) {
-        return 1;
-      } else {
         return -1;
+      } else {
+        return 1;
       }
     });
 
