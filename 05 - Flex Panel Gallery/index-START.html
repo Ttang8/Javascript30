@@ -70,6 +70,10 @@
     .panel > *:last-child { transform: translateY(100%);}
     .panel.open-active > *:last-child { transform: translateY(0);}
 
+    .panel.open {
+      flex: 5;
+    }
+
     .panel p {
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
@@ -116,7 +120,13 @@
   </div>
 
   <script>
+    const panels = document.querySelectorAll('.panel');
 
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen))
   </script>
 
 
