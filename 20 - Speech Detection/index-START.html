@@ -26,13 +26,20 @@
       .join('')
 
       p.textContent = transcript;
+
       if(e.results[0].isFinal) {
         p = document.createElement('p');
         words.appendChild(p);
       }
 
-    console.log(transcript);
+      if(transcript.includes('open Google') && e.results[0].isFinal) {
+        openGoogle();
+      }
   });
+
+  function openGoogle() {
+    window.open('https://www.google.com')
+  }
 
   recognition.addEventListener('end',recognition.start);
 
